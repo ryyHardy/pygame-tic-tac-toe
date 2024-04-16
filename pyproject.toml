@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "pygame-tic-tac-toe"
 version = "0.1.0"
-description = "Basic tic-tac-toe game in Python using pygame."
+description = "Simple tic-tac-toe game in Python using pygame."
 authors = ["Ryan Hardy"]
 readme = "README.md"
 
