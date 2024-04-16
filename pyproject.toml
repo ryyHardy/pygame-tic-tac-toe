@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "pygame-tic-tac-toe"
+version = "0.1.0"
+description = "Basic tic-tac-toe game in Python using pygame."
+authors = ["Ryan Hardy"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pygame = "^2.5.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
