@@ -42,11 +42,11 @@ class TicTacToe:
         self.turn = "O" if self.turn == "X" else "X"
 
     def _get_input(self):
-        # ! TODO: Crashes for the indices being out of bounds sometimes
         if pg.mouse.get_pressed()[0]:
             x, y = pg.mouse.get_pos()
-            row, col = math.floor(x / SQR_SIZE), math.floor(y / SQR_SIZE)
-            if not (row in range(3) or col in range(3)):
+            col, row = math.floor(x / SQR_SIZE), math.floor(y / SQR_SIZE)
+            print((row, col))
+            if (row not in range(3)) or (col not in range(3)):
                 return
             if not self.grid[row][col]:
                 self.grid[row][col] = self.turn
