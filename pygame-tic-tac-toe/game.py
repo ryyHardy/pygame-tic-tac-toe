@@ -41,7 +41,7 @@ class TicTacToe:
     def switch_turn(self):
         self.turn = "O" if self.turn == "X" else "X"
 
-    def _get_input(self):
+    def get_input(self):
         if pg.mouse.get_pressed()[0]:
             x, y = pg.mouse.get_pos()
             col, row = math.floor(x / SQR_SIZE), math.floor(y / SQR_SIZE)
@@ -52,7 +52,7 @@ class TicTacToe:
                 self.grid[row][col] = self.turn
                 self.switch_turn()
 
-    def _draw_grid(self):
+    def draw_grid(self):
         self.screen.fill(BG_COLOR)
 
         for row in range(3):
