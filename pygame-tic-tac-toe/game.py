@@ -45,9 +45,8 @@ class TicTacToe:
         if pg.mouse.get_pressed()[0]:
             x, y = pg.mouse.get_pos()
             col, row = math.floor(x / SQR_SIZE), math.floor(y / SQR_SIZE)
-            print((row, col))
             if (row not in range(3)) or (col not in range(3)):
-                return
+                return  # out of bounds
             if not self.grid[row][col]:
                 self.grid[row][col] = self.turn
                 self.switch_turn()
