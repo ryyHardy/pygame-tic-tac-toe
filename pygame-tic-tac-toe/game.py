@@ -16,7 +16,7 @@ BG_COLOR = (255, 255, 255)
 
 
 class TicTacToe:
-    def __init__(self):
+    def __init__(self) -> None:
         """
         Initializes tic-tac-toe game and pygame.
         """
@@ -24,7 +24,7 @@ class TicTacToe:
         self.grid = ["" for _ in range(9)]
         self.turn = "X"
 
-    def play(self):
+    def play(self) -> None:
         """
         Starts the game loop and plays the game.
         """
@@ -51,13 +51,13 @@ class TicTacToe:
                     self.switch_turn()
             pg.display.update()
 
-    def switch_turn(self):
+    def switch_turn(self) -> None:
         """
         Flips the turn of the game to the other player.
         """
         self.turn = "O" if self.turn == "X" else "X"
 
-    def check_win(self):
+    def check_win(self) -> bool:
         """
         Determines if the current player has won.
 
@@ -94,7 +94,7 @@ class TicTacToe:
             if i in range(9):
                 return i
 
-    def draw_grid(self):
+    def draw_grid(self) -> None:
         """
         Draws the tic-tac-toe grid to the screen.
         """
