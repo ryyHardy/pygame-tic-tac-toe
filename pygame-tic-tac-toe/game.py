@@ -17,11 +17,17 @@ BG_COLOR = (255, 255, 255)
 
 class TicTacToe:
     def __init__(self):
+        """
+        Initializes tic-tac-toe game and pygame.
+        """
         pg.init()
         self.grid = ["" for _ in range(9)]
         self.turn = "X"
 
     def play(self):
+        """
+        Starts the game loop and plays the game.
+        """
         self.screen = pg.display.set_mode((SCREEN_SIZE, SCREEN_SIZE))
         pg.display.set_caption(SCREEN_TITLE)
         self.draw_grid()
@@ -32,7 +38,7 @@ class TicTacToe:
                     pg.quit()
                     sys.exit()
 
-            # This part sucks
+            # This part sucks, but fine
             grid_index = self.get_mouse_input()
             if isinstance(grid_index, int):
                 if not self.grid[grid_index]:
@@ -46,9 +52,18 @@ class TicTacToe:
             pg.display.update()
 
     def switch_turn(self):
+        """
+        Flips the turn of the game to the other player.
+        """
         self.turn = "O" if self.turn == "X" else "X"
 
     def check_win(self):
+        """
+        Determines if the current player has won.
+
+        Returns:
+            bool: True if the current player has one, false otherwise.
+        """
         # https://www.reddit.com/r/learnpython/comments/v8bscr/comment/ibs9e6y/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
         return any(
             self.turn == self.grid[a] == self.grid[b] == self.grid[c]
@@ -80,6 +95,9 @@ class TicTacToe:
                 return i
 
     def draw_grid(self):
+        """
+        Draws the tic-tac-toe grid to the screen.
+        """
         self.screen.fill(BG_COLOR)
 
         for row in range(3):
@@ -92,10 +110,3 @@ class TicTacToe:
                     pg.draw.rect(self.screen, sqr_color, sqr_rect)
 
                 pg.draw.rect(self.screen, GRID_COLOR, sqr_rect, width=3)
-
-
-"""
-OPTIONS:
-    1. Draw the grid and its squares all in one function.
-    2. Use one function to draw squares and another to draw grid lines.
-"""
