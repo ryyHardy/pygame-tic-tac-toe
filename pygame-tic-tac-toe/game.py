@@ -34,14 +34,15 @@ class TicTacToe:
 
             # This part sucks
             grid_index = self.get_mouse_input()
-            if grid_index:
+            if isinstance(grid_index, int):
                 if not self.grid[grid_index]:
                     self.grid[grid_index] = self.turn
                     win = self.check_win()
-                    self.switch_turn()
                     self.draw_grid()
                     if win:
                         print(f"{self.turn} WINS!")
+                        return
+                    self.switch_turn()
             pg.display.update()
 
     def switch_turn(self):
