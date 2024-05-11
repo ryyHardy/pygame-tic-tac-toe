@@ -34,8 +34,6 @@ class TicTacToe:
         # to drawing code
         self.screen = pg.display.set_mode((SCREEN_SIZE, SCREEN_SIZE))
         pg.display.set_caption(SCREEN_TITLE)
-        self.draw_grid()
-
         # GAME LOOP
         while True:
             for event in pg.event.get():
